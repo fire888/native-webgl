@@ -98,6 +98,7 @@
 </div>
 <script>
 
+
 // UI /////////////////////////////////////////////////////
 
 function initBlurRange(idParam, callback) {
@@ -107,20 +108,20 @@ function initBlurRange(idParam, callback) {
   var range = document.querySelector('.range_' + idParam);
 
   range.addEventListener('mousedown', e => {
-    isOnRange = true;
-    rangeMarker.style.left = e.offsetX + 'px';
-    callback(e.offsetX / range.clientWidth);
-  })
+      isOnRange = true;
+      rangeMarker.style.left = e.offsetX + 'px';
+      callback(e.offsetX / range.clientWidth);
+    })
 
   window.document.addEventListener('mouseup', () => isOnRange = false);
 
   range.addEventListener('mousemove', e => {
-    if (!isOnRange) return;
+      if (!isOnRange) return;
 
-    const val = e.offsetX < 0.05 ? 0 : e.offsetX;
-    rangeMarker.style.left = val + 'px';
-    callback(val / range.clientWidth);
-  })
+      const val = e.offsetX < 0.05 ? 0 : e.offsetX;
+      rangeMarker.style.left = val + 'px';
+      callback(val / range.clientWidth);
+    })
 }
 
 
@@ -366,13 +367,11 @@ function initWebGL(image) {
     gl.uniform1f(blurStrLocation, val)
     gl.drawArrays(primitiveType, offset, count);
   })
-
   initLoadImage(image => {
     gl.texImage2D(gl.TEXTURE_2D, 0, gl.RGBA, gl.RGBA, gl.UNSIGNED_BYTE, image);
     gl.drawArrays(primitiveType, offset, count);
     gl.drawArrays(primitiveType, offset, count);
   })
-
   initSaveImage();
 }
 
