@@ -1,6 +1,6 @@
 # Native WebGL blur :cyclone: # 
   
-![pic](https://github.com/fire888/laboratory/blob/master/src/assets/preview.png)
+![pic](https://github.com/fire888/native-webgl/blob/master/imgs/preview.png)
 
 Link
 ------------ 
